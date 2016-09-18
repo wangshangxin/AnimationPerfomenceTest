@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PathAnimationTest.xaml.cs">
+      <DependentUpon>PathAnimationTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TestPages\PageA.xaml.cs">
       <DependentUpon>PageA.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PathAnimationTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TestPages\PageA.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
