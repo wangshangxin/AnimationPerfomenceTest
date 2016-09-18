@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using AnimationTest.Animations;
 
-namespace AnimationPerfomenceTest.Client
+namespace AnimationTest.Client
 {
     /// <summary>
     /// Interaction logic for App.xaml

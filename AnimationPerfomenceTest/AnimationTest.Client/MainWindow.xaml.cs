@@ -6,7 +6,7 @@ using System.Windows.Data;
 using AnimationTest.Client.TestPages;
 using AnimationTest.Animations;
 
-namespace AnimationPerfomenceTest.Client
+namespace AnimationTest.Client
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
