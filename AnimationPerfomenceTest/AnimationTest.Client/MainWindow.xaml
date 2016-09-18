@@ -1,12 +1,49 @@
 ﻿<Window x:Class="AnimationPerfomenceTest.Client.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:controls="clr-namespace:AnimationTest.Animations.Controls;assembly=AnimationTest.Animations"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AnimationPerfomenceTest.Client"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+	    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	    xmlns:transitionals="clr-namespace:AnimationTest.Animations;assembly=AnimationTest.Animations"
+	    mc:Ignorable="d"
+        Title="页面切换动画测试" WindowState="Maximized" WindowStartupLocation="CenterScreen" x:Name="WndEffectList" 
+        DataContext="{DynamicResource CurrentAnimation}">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="Width" Value="Auto"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="Margin" Value="10,0,10,10"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="DataContext" Value="{Binding}"></Setter>
+            <!--<Setter Property="Command" Value="{Binding NavigateCommand,ElementName=WndEffectList}"></Setter>-->
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Background" Value="Beige"></Setter>
+            <Setter Property="DataContext" Value="{Binding}"></Setter>
+        </Style>
+        <DataTemplate x:Key="AnimationTypeItem">
+            <!--<Button x:Name="TypeName" Content="{Binding Name, Mode=OneWay}"></Button>-->
+            <TextBlock Text="{Binding Name, Mode=OneWay}" Margin="5"></TextBlock>
+        </DataTemplate>
+        <ObjectDataProvider x:Key="AnimationsDataSource" d:IsDataSource="True" ObjectType="{x:Type System:Type}"/>
+        <ObjectDataProvider x:Key="CurrentAnimation" d:IsDataSource="True" ObjectType="{x:Type transitionals:Transition}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource AnimationsDataSource}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="90*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="TransitionList" IsSynchronizedWithCurrentItem="True"  Grid.Column="0"
+                             ItemTemplate="{DynamicResource AnimationTypeItem}" 
+                             ItemsSource="{Binding}" 
+                             ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
+        <controls:TransitionElement Grid.Column="1" x:Name="TransitionBox" Transition="{Binding}"/>
     </Grid>
 </Window>
+

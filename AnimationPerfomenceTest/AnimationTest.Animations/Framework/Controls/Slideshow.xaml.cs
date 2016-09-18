@@ -16,7 +16,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Threading;
 
-namespace Transitionals.Controls
+namespace AnimationTest.Animations.Controls
 {
     /// <summary>
     /// Interaction logic for Slideshow.xaml

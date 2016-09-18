@@ -13,9 +13,9 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using Transitionals.Transitions;
+using AnimationTest.Animations.Transitions;
 
-namespace Transitionals.Controls
+namespace AnimationTest.Animations.Controls
 {
     /// <summary>
     /// A panel that can display only a single item. If the panel is associated with a selector, 

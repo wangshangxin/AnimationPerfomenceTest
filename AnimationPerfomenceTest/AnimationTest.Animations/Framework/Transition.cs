@@ -12,9 +12,9 @@ http://www.microsoft.com/resources/sharedsource/licensingbasics/publiclicense.ms
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Controls;
-using Transitionals.Controls;
+using AnimationTest.Animations.Controls;
 
-namespace Transitionals
+namespace AnimationTest.Animations
 {
     #region NullContentSupport enum type
 

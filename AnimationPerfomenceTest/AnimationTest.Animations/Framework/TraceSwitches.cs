@@ -11,7 +11,7 @@ http://www.microsoft.com/resources/sharedsource/licensingbasics/publiclicense.ms
 #endregion // License
 using System.Diagnostics;
 
-namespace Transitionals
+namespace AnimationTest.Animations
 {
     /// <summary>
     /// Provides trace level switches for various components of the framework.

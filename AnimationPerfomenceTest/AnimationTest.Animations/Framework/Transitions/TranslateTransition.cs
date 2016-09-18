@@ -14,9 +14,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using Transitionals.Controls;
+using AnimationTest.Animations.Controls;
 
-namespace Transitionals.Transitions
+namespace AnimationTest.Animations.Transitions
 {
     // Applies a Translation to the content.  You can specify the starting point of the new 
     // content or the ending point of the old content using relative coordinates.

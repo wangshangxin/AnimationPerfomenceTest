@@ -11,7 +11,7 @@ http://www.microsoft.com/resources/sharedsource/licensingbasics/publiclicense.ms
 #endregion // License
 using System.Windows.Controls;
 
-namespace Transitionals.Controls
+namespace AnimationTest.Animations.Controls
 {
     public class SlideshowItem : ContentControl
     {

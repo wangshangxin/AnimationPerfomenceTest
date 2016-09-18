@@ -9,10 +9,10 @@ If it does not, you can obtain a copy from:
 http://www.microsoft.com/resources/sharedsource/licensingbasics/publiclicense.mspx
 *******************************************************************************
 License -->
-<Selector x:Class="Transitionals.Controls.Slideshow"
+<Selector x:Class="AnimationTest.Animations.Controls.Slideshow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:Transitionals="clr-namespace:Transitionals">
+    xmlns:AnimationTest.Animations="clr-namespace:AnimationTest.Animations">
   <Selector.Template>
     <ControlTemplate>
       <Grid x:Name="layoutRoot" Background="{TemplateBinding Background}">

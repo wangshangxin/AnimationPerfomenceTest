@@ -12,7 +12,7 @@ http://www.microsoft.com/resources/sharedsource/licensingbasics/publiclicense.ms
 using System;
 using System.Windows;
 
-namespace Transitionals.Controls
+namespace AnimationTest.Animations.Controls
 {
     /// <summary>
     /// Provides data for events involving a transition.

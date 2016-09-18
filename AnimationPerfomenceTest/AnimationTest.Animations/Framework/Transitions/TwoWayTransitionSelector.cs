@@ -11,7 +11,7 @@ http://www.microsoft.com/resources/sharedsource/licensingbasics/publiclicense.ms
 #endregion // License
 using System.Windows;
 
-namespace Transitionals.Transitions
+namespace AnimationTest.Animations.Transitions
 {
     public enum TransitionDirection
     {

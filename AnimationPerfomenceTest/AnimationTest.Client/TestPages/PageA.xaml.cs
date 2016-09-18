@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AnimationTestProject.Pages
+namespace AnimationTest.Client.TestPages
 {
     /// <summary>
     /// Interaction logic for PageA.xaml

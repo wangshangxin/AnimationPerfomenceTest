@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Media.Animation;
 
-namespace Transitionals.Transitions
+namespace AnimationTest.Animations.Transitions
 {
     /// <summary>
     ///     Stores the XAML that defines the DiagonalWipeTransition

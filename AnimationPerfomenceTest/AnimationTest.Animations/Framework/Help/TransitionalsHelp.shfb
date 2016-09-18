@@ -1,17 +1,17 @@
 ﻿<project schemaVersion="1.6.0.2">
     <assemblies>
-        <assembly assemblyPath="..\bin\Debug\Transitionals.dll" xmlCommentsPath="..\bin\Debug\Transitionals.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\bin\Debug\AnimationTest.Animations.dll" xmlCommentsPath="..\bin\Debug\AnimationTest.Animations.xml" commentsOnly="False" />
     </assemblies>
     <namespaceSummaries>
         <namespaceSummaryItem name="" isDocumented="False" />
-        <namespaceSummaryItem name="Transitionals" isDocumented="True">The Transitionals namespace includes core components that are leveraged by transitional controls and applications that consume them. For example, this namespace includes the base classes Transition and Transition3D on which custom transitions can be defined.</namespaceSummaryItem>
-        <namespaceSummaryItem name="Transitionals.Controls" isDocumented="True">The Controls namespace includes the base controls that ship with Transitionals. These include TransitionElement, SldieShow, etc.</namespaceSummaryItem>
-        <namespaceSummaryItem name="Transitionals.Transitions" isDocumented="True">The Transitions namespace includes all of the “out of the box” transitions that come with the Transitionals framework.</namespaceSummaryItem>
+        <namespaceSummaryItem name="AnimationTest.Animations" isDocumented="True">The AnimationTest.Animations namespace includes core components that are leveraged by transitional controls and applications that consume them. For example, this namespace includes the base classes Transition and Transition3D on which custom transitions can be defined.</namespaceSummaryItem>
+        <namespaceSummaryItem name="AnimationTest.Animations.Controls" isDocumented="True">The Controls namespace includes the base controls that ship with AnimationTest.Animations. These include TransitionElement, SldieShow, etc.</namespaceSummaryItem>
+        <namespaceSummaryItem name="AnimationTest.Animations.Transitions" isDocumented="True">The Transitions namespace includes all of the “out of the box” transitions that come with the AnimationTest.Animations framework.</namespaceSummaryItem>
     </namespaceSummaries>
     <additionalContent>
         <contentItem sourcePath="..\Documentation\*.*" destPath="Documentation\" excludeItems="False" />
     </additionalContent>
-    <ProjectSummary>Transitionals is a framework that allows more than one piece of graphical content to share the same workspace in an applications user interface. It does this by providing a set of controls and an extensible library of animations that allow the user to switch between these pieces of content dynamically at run time.</ProjectSummary>
+    <ProjectSummary>AnimationTest.Animations is a framework that allows more than one piece of graphical content to share the same workspace in an applications user interface. It does this by providing a set of controls and an extensible library of animations that allow the user to switch between these pieces of content dynamically at run time.</ProjectSummary>
     <MissingTags>Remarks, AutoDocumentCtors</MissingTags>
     <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, SealedProtected</VisibleItems>
     <HtmlHelp1xCompilerPath path="" />
@@ -30,8 +30,8 @@
     <Preliminary>False</Preliminary>
     <RootNamespaceContainer>False</RootNamespaceContainer>
     <RootNamespaceTitle />
-    <HelpTitle>Transitionals</HelpTitle>
-    <HtmlHelpName>Transitionals</HtmlHelpName>
+    <HelpTitle>AnimationTest.Animations</HelpTitle>
+    <HtmlHelpName>AnimationTest.Animations</HtmlHelpName>
     <Language>en-US</Language>
     <CopyrightHref />
     <CopyrightText />
@@ -46,6 +46,6 @@
     <SyntaxFilters>Standard</SyntaxFilters>
     <ShowFeedbackControl>False</ShowFeedbackControl>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
-    <ContentSiteMap path=".\TransitionalsHelp.sitemap" />
+    <ContentSiteMap path=".\AnimationTest.AnimationsHelp.sitemap" />
     <TopicFileTransform path="" />
 </project>

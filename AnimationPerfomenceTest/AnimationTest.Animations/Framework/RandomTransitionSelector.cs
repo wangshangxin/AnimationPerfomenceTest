@@ -18,7 +18,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace Transitionals
+namespace AnimationTest.Animations
 {
     /// <summary>
     /// A transition selector that randomly selects from a list of available transitions.

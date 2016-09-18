@@ -14,9 +14,9 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Collections;
 using System.ComponentModel.Design.Serialization;
-using Transitionals.Transitions;
+using AnimationTest.Animations.Transitions;
 
-namespace Transitionals
+namespace AnimationTest.Animations
 {
     /// <summary>
     /// TypeConverter to convert Transition to/from other types.

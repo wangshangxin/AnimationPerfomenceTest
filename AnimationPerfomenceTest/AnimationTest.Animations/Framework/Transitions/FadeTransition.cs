@@ -13,9 +13,9 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
-using Transitionals.Controls;
+using AnimationTest.Animations.Controls;
 
-namespace Transitionals.Transitions
+namespace AnimationTest.Animations.Transitions
 {
     // Simple transition that fades out the old content
     [System.Runtime.InteropServices.ComVisible(false)]

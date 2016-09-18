@@ -13,7 +13,7 @@ using System.Windows;
 using System.Windows.Media.Animation;
 using System.Runtime.InteropServices;
 
-namespace Transitionals.Transitions
+namespace AnimationTest.Animations.Transitions
 {
     /// <summary>
     ///     Stores the XAML that defines the CheckerboardTransition

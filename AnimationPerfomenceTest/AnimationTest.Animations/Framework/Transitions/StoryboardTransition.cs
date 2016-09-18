@@ -13,9 +13,9 @@ using System.Windows.Media.Animation;
 using System.Windows;
 using System.Windows.Controls;
 using System.Runtime.InteropServices;
-using Transitionals.Controls;
+using AnimationTest.Animations.Controls;
 
-namespace Transitionals.Transitions
+namespace AnimationTest.Animations.Transitions
 {
     // Transition with storyboards for the old and new content presenters
     [StyleTypedProperty(Property="OldContentStyle", StyleTargetType=typeof(ContentPresenter))]

@@ -11,7 +11,7 @@ http://www.microsoft.com/resources/sharedsource/licensingbasics/publiclicense.ms
 #endregion // License
 using System.Windows;
 
-namespace Transitionals
+namespace AnimationTest.Animations
 {
     /// <summary>
     /// Allows different transitions to run based on the old and new contents.

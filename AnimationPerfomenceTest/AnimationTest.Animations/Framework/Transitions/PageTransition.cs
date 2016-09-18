@@ -16,9 +16,9 @@ using System.Windows.Threading;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Input;
-using Transitionals.Controls;
+using AnimationTest.Animations.Controls;
 
-namespace Transitionals.Transitions
+namespace AnimationTest.Animations.Transitions
 {
     // Cloth physics with extra constraints to the sides of the pages
     [System.Runtime.InteropServices.ComVisible(false)]

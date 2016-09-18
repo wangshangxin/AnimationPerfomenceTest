@@ -9,7 +9,7 @@ If it does not, you can obtain a copy from:
 http://www.microsoft.com/resources/sharedsource/licensingbasics/publiclicense.mspx
 *******************************************************************************
 License -->
-<FrameworkElement x:Class="Transitionals.Transitions.MeltTransitionFrameworkElement"
+<FrameworkElement x:Class="AnimationTest.Animations.Transitions.MeltTransitionFrameworkElement"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     >

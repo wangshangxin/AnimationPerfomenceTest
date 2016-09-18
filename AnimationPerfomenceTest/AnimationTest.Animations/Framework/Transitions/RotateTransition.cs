@@ -15,9 +15,9 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Media3D;
-using Transitionals.Controls;
+using AnimationTest.Animations.Controls;
 
-namespace Transitionals.Transitions
+namespace AnimationTest.Animations.Transitions
 {
     public enum RotateDirection
     {

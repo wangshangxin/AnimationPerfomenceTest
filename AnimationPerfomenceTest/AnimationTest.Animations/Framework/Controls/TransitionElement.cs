@@ -17,7 +17,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Transitionals.Controls
+namespace AnimationTest.Animations.Controls
 {
     /// <summary>
     /// An element that can display exactly one piece of visual content. When the content is changed, a 
