@@ -23,7 +23,7 @@ namespace AnimationPerfomenceTest.Client
         public MainWindow()
         {
             InitializeComponent();
-            ////
+            //////
         }
     }
 }
