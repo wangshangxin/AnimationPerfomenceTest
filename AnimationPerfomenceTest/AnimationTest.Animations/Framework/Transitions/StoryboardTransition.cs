@@ -97,9 +97,24 @@ namespace AnimationTest.Animations.Transitions
                         done = true;
                     };
                     oldStoryboard.Begin(oldContent, true);
+                    oldStoryboard.Completed += delegate
+                    {
+                        if (newStoryboard != null)
+                        {
+                            newStoryboard = newStoryboard.Clone();
+                            newContent.SetValue(NewContentStoryboardProperty, newStoryboard);
+                            newStoryboard.Completed += delegate
+                            {
+                                if (done)
+                                    EndTransition(transitionElement, oldContent, newContent);
+                                done = true;
+                            };
+                            newStoryboard.Begin(newContent, true);
+                        }
+                    };
                 }
 
-                if (newStoryboard != null)
+                if (oldStoryboard == null && newStoryboard != null)
                 {
                     newStoryboard = newStoryboard.Clone();
                     newContent.SetValue(NewContentStoryboardProperty, newStoryboard);
@@ -111,6 +126,7 @@ namespace AnimationTest.Animations.Transitions
                     };
                     newStoryboard.Begin(newContent, true);
                 }
+
             }
             else
             {

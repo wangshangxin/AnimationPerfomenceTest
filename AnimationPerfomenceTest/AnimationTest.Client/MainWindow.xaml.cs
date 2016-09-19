@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,11 +14,21 @@ namespace AnimationTest.Client
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         //public static readonly DependencyProperty NavigateCommandProperty = DependencyProperty.Register(
         //    "NavigateCommand", typeof(RoutedCommand), typeof(MainWindow), new PropertyMetadata(default(RoutedCommand)));
         private ICollectionView _view;
+        private static MainWindow _mainWindow;
+        private DiagramSetting _diagramSetting;
+
+        public static MainWindow Instance
+        {
+            get
+            {
+                return _mainWindow;
+            }
+        }
 
         //public RoutedCommand NavigateCommand
         //{
@@ -30,6 +43,7 @@ namespace AnimationTest.Client
             //var commandBinding = new CommandBinding(this.NavigateCommand);
             //commandBinding.Executed += commandBinding_Executed;
             //this.CommandBindings.Add(commandBinding);
+            this.Loaded += MainWindow_Loaded;
 
 
             _view = CollectionViewSource.GetDefaultView(App.CurrentApp.Animations);
@@ -39,6 +53,18 @@ namespace AnimationTest.Client
             CurrentAnimation.ObjectType = null;
             AnimationsDataSource.ObjectType = null;
             AnimationsDataSource.ObjectInstance = App.CurrentApp.Animations;
+
+            _mainWindow = this;
+            _diagramSetting = new DiagramSetting();
+            DiagramSize = new Size(800,600);
+        }
+
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (AnimationPages.Count == 0)
+            {
+                _diagramSetting.ShowDialog();
+            }
         }
 
         private void view_CurrentChanged(object sender, EventArgs e)
@@ -109,30 +135,61 @@ namespace AnimationTest.Client
 
         private UserControl ControlA
         {
-            get
-            {
-                if (_controlA == null)
-                {
-                    _controlA = new PageA();
-                }
-
-                return _controlA;
-            }
+            get { return _controlA; }
+            set { this._controlA = value; }
         }
-        private UserControl _controlA;
+        private UserControl _controlA = new PageA();
 
         private UserControl ControlB
         {
-            get
-            {
-                if (_controlB == null)
-                {
-                    _controlB = new PageB();
-                }
+            get { return _controlB; }
+            set { this._controlB = value; }
+        }
+        private UserControl _controlB = new PageB();
 
-                return _controlB;
+        public Size DiagramSize
+        {
+            set
+            {
+                this.TransitionBox.Width = value.Width;
+                this.TransitionBox.Height = value.Height;
+                this.txtResolution.Text = value.Width + " * " + value.Height;
+                this._diagramSize = value;
+            }
+            get { return this._diagramSize; }
+        }
+
+        private Size _diagramSize = new Size(800, 600);
+
+        public List<PageInfo> AnimationPages
+        {
+            get { return this._animationPages; }
+            set
+            {
+                this._animationPages = value;
+
+                this.ControlA = AnimationPages[0].Control;
+                this.ControlB = AnimationPages[1].Control;
+                this.txtPageA.Text = AnimationPages[0].Name;
+                this.txtPageB.Text = AnimationPages[1].Name;
             }
         }
-        private UserControl _controlB;
+
+        private List<PageInfo> _animationPages = new List<PageInfo>();
+        private void btnSetting_Click(object sender, RoutedEventArgs e)
+        {
+            _diagramSetting = new DiagramSetting();
+            _diagramSetting.ShowDialog();
+        }
+
+        private void OnPropertyChanged(string name)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

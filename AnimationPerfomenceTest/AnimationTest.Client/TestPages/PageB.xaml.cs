@@ -31,7 +31,7 @@ namespace AnimationTest.Client.TestPages
         {
             this.wrap.Children.Clear();
             var number = txtNumber.Text;
-            if (IsNumber(number))
+            if (Utils.IsNumber(number))
             {
                 int inum = int.Parse(number);
 
@@ -43,37 +43,25 @@ namespace AnimationTest.Client.TestPages
                     btn.Height = 50;
                     btn.Content = "Button " + (i + 1).ToString();
 
-                    DoubleAnimation widthAnimation = new DoubleAnimation()
-                    {
-                        To = btn.Width - 30,
-                        Duration = TimeSpan.FromSeconds(2),
-                        RepeatBehavior = RepeatBehavior.Forever
-                    };
-                    DoubleAnimation heightAnimation = new DoubleAnimation()
-                    {
-                        To = (btn.Height - 40) / 3,
-                        Duration = TimeSpan.FromSeconds(2),
-                        RepeatBehavior = RepeatBehavior.Forever
-                    };
-                    btn.BeginAnimation(Button.WidthProperty, widthAnimation);
-                    btn.BeginAnimation(Button.HeightProperty, heightAnimation);
+                    //DoubleAnimation widthAnimation = new DoubleAnimation()
+                    //{
+                    //    To = btn.Width - 30,
+                    //    Duration = TimeSpan.FromSeconds(2),
+                    //    RepeatBehavior = RepeatBehavior.Forever
+                    //};
+                    //DoubleAnimation heightAnimation = new DoubleAnimation()
+                    //{
+                    //    To = (btn.Height - 40) / 3,
+                    //    Duration = TimeSpan.FromSeconds(2),
+                    //    RepeatBehavior = RepeatBehavior.Forever
+                    //};
+                    //btn.BeginAnimation(Button.WidthProperty, widthAnimation);
+                    //btn.BeginAnimation(Button.HeightProperty, heightAnimation);
 
 
                     this.wrap.Children.Add(btn);
                 }
             }
-        }
-
-        private bool IsNumber(string strNumber)
-        {
-            if (string.IsNullOrEmpty(strNumber))
-                return false;
-            else
-            {
-                Regex regex = new Regex("[^0-9]");
-                return !regex.IsMatch(strNumber);
-            }
-            return false;
         }
     }
 }
