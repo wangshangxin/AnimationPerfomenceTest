@@ -16,21 +16,21 @@
             pathGeometry.AddGeometry(new LineGeometry()
             {
                 StartPoint = new Point(0, 0),
-                EndPoint = new Point(ActualWidth, 0)
+                EndPoint = new Point(RenderSize.Width, 0)
             });
             pathGeometry.AddGeometry(new LineGeometry()
             {
-                StartPoint = new Point(ActualWidth, 0),
-                EndPoint = new Point(ActualWidth, ActualHeight)
+                StartPoint = new Point(RenderSize.Width, 0),
+                EndPoint = new Point(RenderSize.Width, RenderSize.Height)
             });
             pathGeometry.AddGeometry(new LineGeometry()
             {
-                StartPoint = new Point(ActualWidth, ActualHeight),
-                EndPoint = new Point(0, ActualHeight)
+                StartPoint = new Point(RenderSize.Width, RenderSize.Height),
+                EndPoint = new Point(0, RenderSize.Height)
             });
             pathGeometry.AddGeometry(new LineGeometry()
             {
-                StartPoint = new Point(0, ActualHeight),
+                StartPoint = new Point(0, RenderSize.Height),
                 EndPoint = new Point(0, 0)
             });
             AnimationData = pathGeometry;

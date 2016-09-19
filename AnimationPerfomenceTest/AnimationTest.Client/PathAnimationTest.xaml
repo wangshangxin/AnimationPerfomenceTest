@@ -7,15 +7,16 @@
         xmlns:animations="clr-namespace:AnimationTest.Animations;assembly=AnimationTest.Animations"
         mc:Ignorable="d" 
         Title="PathAnimationTest" Height="300" Width="300">
-    <Grid>
-        <animations:BorderAnimation Background="Blue">
+    <Border Padding="5" BorderThickness="2" BorderBrush="Red">
+        <animations:BorderAnimation>
             <animations:BorderAnimation.AnimationThumb>
-                <Ellipse Width="10" Height="10" Fill="Red"/>
+                <Ellipse  Width="10" Height="10" Fill="Green"/>
             </animations:BorderAnimation.AnimationThumb>
-            
-            <Border Background="Green" Margin="3">
-                
+
+            <Border Background="Red">
+
             </Border>
         </animations:BorderAnimation>
-    </Grid>
+    </Border>
+   
 </Window>

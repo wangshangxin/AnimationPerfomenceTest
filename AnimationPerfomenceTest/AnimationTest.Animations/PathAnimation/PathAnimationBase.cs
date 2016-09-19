@@ -6,14 +6,22 @@ using System.Threading.Tasks;
 
 namespace AnimationTest.Animations
 {
+    using System.Diagnostics;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
     using System.Windows.Media.Animation;
     using Core;
 
-    public abstract class PathAnimationBase : ContentControl
+    public abstract class PathAnimationBase : Canvas
     {
+        
+        /// <summary>Initializes a new instance of the <see cref="T:System.Windows.Controls.ContentControl" /> class. </summary>
+        //static PathAnimationBase()
+        //{
+        //    DefaultStyleKeyProperty.OverrideMetadata(typeof(PathAnimationBase), new FrameworkPropertyMetadata(typeof(PathAnimationBase)));
+        //}
+
         #region AnimationData
 
         /// <summary>
@@ -59,6 +67,8 @@ namespace AnimationTest.Animations
 
         private void OnAnimationThumbPropertyChangedCallBack()
         {
+            this.Children.Add(AnimationThumb);
+           
             RenderAnimation();
         }
         #endregion
@@ -67,18 +77,28 @@ namespace AnimationTest.Animations
         {
             if (AnimationThumb != null)
             {
-                var animation = new MatrixAnimationUsingPath()
-                {
-                    PathGeometry = AnimationData,
-                    DoesRotateWithTangent = true,
-                    AccelerationRatio = 1.0,
-                    DecelerationRatio = .5,
-                    Duration = TimeSpan.FromMilliseconds(3000),
-                    Name = "PathAnimationBase"
-                };
-                AnimationThumb.BeginAnimation(MatrixTransform.MatrixProperty, animation);
+                NameScope.SetNameScope(this, new NameScope());
+              
+                Storyboard story = new Storyboard();
+                AnimationThumb.RenderTransformOrigin = new Point(0.5, 0.5);
+                MatrixTransform matrix = new MatrixTransform();
+                TransformGroup groups = new TransformGroup();
+                groups.Children.Add(matrix);
+                AnimationThumb.RenderTransform = groups;
+                MatrixAnimationUsingPath matrixAnimation = new MatrixAnimationUsingPath();
+                matrixAnimation.PathGeometry =AnimationData;
+                matrixAnimation.Duration = new Duration(TimeSpan.FromSeconds(5));
+                matrixAnimation.DoesRotateWithTangent = true;//旋转
+                matrixAnimation.RepeatBehavior=RepeatBehavior.Forever;
+                story.Children.Add(matrixAnimation);
+                this.RegisterName("matrix", matrix);
+               Storyboard.SetTargetName(matrixAnimation, "matrix");
+                Storyboard.SetTargetProperty(matrixAnimation, new PropertyPath(MatrixTransform.MatrixProperty));
+                story.Begin(this);
             }
-           
         }
+
     }
+
+
 }
