@@ -161,7 +161,7 @@ namespace AnimationTest.Client
 
         private Size _diagramSize = new Size(800, 600);
 
-        public List<PageInfo> AnimationPages
+        public List<TestPage> AnimationPages
         {
             get { return this._animationPages; }
             set
@@ -175,7 +175,7 @@ namespace AnimationTest.Client
             }
         }
 
-        private List<PageInfo> _animationPages = new List<PageInfo>();
+        private List<TestPage> _animationPages = new List<TestPage>();
         private void btnSetting_Click(object sender, RoutedEventArgs e)
         {
             _diagramSetting = new DiagramSetting();

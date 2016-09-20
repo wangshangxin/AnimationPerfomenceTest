@@ -43,6 +43,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition Height="20"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="分辨率：" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
@@ -50,7 +51,8 @@
         <ListBox Grid.Row="1" Grid.Column="1" Width="220" Height="Auto" Style="{StaticResource DataItemCheckListBoxStyle}"
                  VerticalAlignment="Center" HorizontalAlignment="Left" ItemsSource="{Binding Pages, Mode=TwoWay}">
         </ListBox>
-        <Button Content="确定" Grid.Row="2" Grid.Column="1" Margin="0,0,10,0" x:Name="btnOK"
+        <TextBlock Text="*请选择两个页面进行测试" Foreground="Red" Grid.Row="2" Grid.Column="1"></TextBlock>
+        <Button Content="确定" Grid.Row="3" Grid.Column="1" Margin="0,0,10,0" x:Name="btnOK"
                 Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center" Click="btnOK_Click"></Button>
         <Grid Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>

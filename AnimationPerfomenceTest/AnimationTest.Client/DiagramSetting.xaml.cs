@@ -13,7 +13,7 @@ namespace AnimationTest.Client
     {
         private int _pageCount;
 
-        private List<PageInfo> _selectedPages;
+        private List<TestPage> _selectedPages;
 
         public DiagramSetting()
         {
@@ -22,15 +22,15 @@ namespace AnimationTest.Client
             Loaded += DiagramSetting_Loaded;
         }
 
-        public List<PageInfo> Pages { get; set; }
+        public List<TestPage> Pages { get; set; }
 
         private void DiagramSetting_Loaded(object sender, RoutedEventArgs e)
         {
             txtWidth.Text = MainWindow.Instance.DiagramSize.Width.ToString();
             txtHeight.Text = MainWindow.Instance.DiagramSize.Height.ToString();
 
-            Pages = new List<PageInfo>();
-            _selectedPages = new List<PageInfo>();
+            Pages = new List<TestPage>();
+            _selectedPages = new List<TestPage>();
 
             AddPages();
             DataContext = this;
@@ -39,13 +39,13 @@ namespace AnimationTest.Client
         private void AddPages()
         {
             Pages.Add(GeneratePage("纯图片背景页面", new PageA()));
-            Pages.Add(GeneratePage("自定义控件个数页面", new PageB()));
+            Pages.Add(GeneratePage("多个按钮页面", new PageB()));
             Pages.Add(GeneratePage("多个动画控件页面", new PageC()));
         }
 
-        private PageInfo GeneratePage(string name, UserControl control)
+        private TestPage GeneratePage(string name, UserControl control)
         {
-            PageInfo info =  new PageInfo()
+            TestPage info =  new TestPage()
             {
                 Name = name, 
                 Control = control,
@@ -73,12 +73,12 @@ namespace AnimationTest.Client
             if (_pageCount == 2)
                 MainWindow.Instance.AnimationPages = _selectedPages;
 
-            Hide();
+            Close();
         }
 
         private void Pages_OnChecked(object sender, RoutedEventArgs e)
         {
-            var temp = (PageInfo)((CheckBox)sender).DataContext;
+            var temp = (TestPage)((CheckBox)sender).DataContext;
 
             if (!_selectedPages.Contains(temp))
                 _selectedPages.Add(temp);
@@ -95,19 +95,20 @@ namespace AnimationTest.Client
         {
             _pageCount--;
 
-            var temp = (PageInfo) ((CheckBox) sender).DataContext;
+            var temp = (TestPage) ((CheckBox) sender).DataContext;
 
             if (_selectedPages.Contains(temp))
                 _selectedPages.Remove(temp);
         }
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            e.Cancel = true;
-            Hide();
-        }
+
+        //protected override void OnClosing(CancelEventArgs e)
+        //{
+            //e.Cancel = true;
+            //Close();
+        //}
     }
 
-    public class PageInfo : INotifyPropertyChanged
+    public class TestPage : INotifyPropertyChanged
     {
         public string Name
         {
