@@ -39,8 +39,8 @@ namespace AnimationTest.Animations.Transitions
         {
             this.NewContentStyle = (Style)frameworkElement.FindResource("DiagonalWipeTransitionNewContentStyle");
             this.NewContentStoryboard = (Storyboard)frameworkElement.FindResource("DiagonalWipeTransitionNewContentStoryboard");
-            this.OldContentStyle = (Style)frameworkElement.FindResource("VerticalWipeTransitionNewContentStyle");
-            this.OldContentStoryboard = (Storyboard)frameworkElement.FindResource("VerticalWipeTransitionNewContentStoryboard");
+            //this.OldContentStyle = (Style)frameworkElement.FindResource("VerticalWipeTransitionNewContentStyle");
+            //this.OldContentStoryboard = (Storyboard)frameworkElement.FindResource("VerticalWipeTransitionNewContentStoryboard");
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:DoNotPassLiteralsAsLocalizedParameters", MessageId = "System.NotSupportedException.#ctor(System.String)")]

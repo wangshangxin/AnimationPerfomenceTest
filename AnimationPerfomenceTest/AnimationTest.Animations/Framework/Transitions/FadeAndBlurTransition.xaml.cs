@@ -19,9 +19,10 @@ namespace AnimationTest.Animations.Transitions
     ///     Stores the XAML that defines the FadeAndBlurTransition
     /// </summary>
     [ComVisible(false)]
-    public partial class FadeAndBlurTransitionFrameworkElement : FrameworkElement
+    //public partial class FadeAndBlurTransitionFrameworkElement : FrameworkElement
+    public partial class BlurTransitionFrameworkElement : FrameworkElement
     {
-        public FadeAndBlurTransitionFrameworkElement()
+        public BlurTransitionFrameworkElement()
         {
             InitializeComponent();
         }
@@ -31,22 +32,22 @@ namespace AnimationTest.Animations.Transitions
     ///     Represents the FadeAndBlurTransition
     /// </summary>
     [ComVisible(false)]
-    public class FadeAndBlurTransition : StoryboardTransition
+    public class BlurTransition : StoryboardTransition
     {
-        static private FadeAndBlurTransitionFrameworkElement frameworkElement = new FadeAndBlurTransitionFrameworkElement();
+        static private BlurTransitionFrameworkElement frameworkElement = new BlurTransitionFrameworkElement();
 
-        static FadeAndBlurTransition()
+        static BlurTransition()
         {
-            AcceptsNullContentProperty.OverrideMetadata(typeof(FadeAndBlurTransition), new FrameworkPropertyMetadata(NullContentSupport.New));
-            IsNewContentTopmostProperty.OverrideMetadata(typeof(FadeAndBlurTransition), new FrameworkPropertyMetadata(false));
+            AcceptsNullContentProperty.OverrideMetadata(typeof(BlurTransition), new FrameworkPropertyMetadata(NullContentSupport.New));
+            IsNewContentTopmostProperty.OverrideMetadata(typeof(BlurTransition), new FrameworkPropertyMetadata(false));
         }
 
-        public FadeAndBlurTransition()
+        public BlurTransition()
         {
             this.OldContentStyle = (Style)frameworkElement.FindResource("FadeAndBlurTransitionOldContentStyle");
             this.OldContentStoryboard = (Storyboard)frameworkElement.FindResource("FadeAndBlurTransitionOldContentStoryboard");
-            this.NewContentStyle = (Style)frameworkElement.FindResource("FadeAndBlurTransitionNewContentStyle");
-            this.NewContentStoryboard = (Storyboard)frameworkElement.FindResource("FadeAndBlurTransitionNewContentStoryboard");
+            //this.NewContentStyle = (Style)frameworkElement.FindResource("FadeAndBlurTransitionNewContentStyle");
+            //this.NewContentStoryboard = (Storyboard)frameworkElement.FindResource("FadeAndBlurTransitionNewContentStoryboard");
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:DoNotPassLiteralsAsLocalizedParameters", MessageId = "System.NotSupportedException.#ctor(System.String)")]

@@ -31,22 +31,23 @@ namespace AnimationTest.Animations.Transitions
     ///     Represents the FadeAndGrowTransition
     /// </summary>
     [ComVisible(false)]
-    public class FadeAndGrowTransition : StoryboardTransition
+    //public class FadeAndGrowTransition : StoryboardTransition
+    public class GrowTransition : StoryboardTransition
     {
         static private FadeAndGrowTransitionFrameworkElement frameworkElement = new FadeAndGrowTransitionFrameworkElement();
 
-        static FadeAndGrowTransition()
+        static GrowTransition()
         {
-            AcceptsNullContentProperty.OverrideMetadata(typeof(FadeAndGrowTransition), new FrameworkPropertyMetadata(NullContentSupport.Both));
-            IsNewContentTopmostProperty.OverrideMetadata(typeof(FadeAndGrowTransition), new FrameworkPropertyMetadata(false));
+            AcceptsNullContentProperty.OverrideMetadata(typeof(GrowTransition), new FrameworkPropertyMetadata(NullContentSupport.Both));
+            IsNewContentTopmostProperty.OverrideMetadata(typeof(GrowTransition), new FrameworkPropertyMetadata(false));
         }
 
-        public FadeAndGrowTransition()
+        public GrowTransition()
         {
             this.OldContentStyle = (Style)frameworkElement.FindResource("FadeAndGrowTransitionOldContentStyle");
             this.OldContentStoryboard = (Storyboard)frameworkElement.FindResource("FadeAndGrowTransitionOldContentStoryboard");
-            this.NewContentStyle = (Style)frameworkElement.FindResource("FadeAndGrowTransitionNewContentStyle");
-            this.NewContentStoryboard = (Storyboard)frameworkElement.FindResource("FadeAndGrowTransitionNewContentStoryboard");
+            //this.NewContentStyle = (Style)frameworkElement.FindResource("FadeAndGrowTransitionNewContentStyle");
+            //this.NewContentStoryboard = (Storyboard)frameworkElement.FindResource("FadeAndGrowTransitionNewContentStoryboard");
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:DoNotPassLiteralsAsLocalizedParameters", MessageId = "System.NotSupportedException.#ctor(System.String)")]
